@@ -1,0 +1,413 @@
+@import './mq';
+
+$mq-responsive: true;
+$mq-breakpoints: (
+    mobile: 300px,
+    largeMobile: 480px,
+    tablet: 600px,
+    desktop: 1024px,
+    wide: 1366px,
+);
+
+$black: #202020;
+$white: #fff;
+$grey:  #eee;
+
+$sans: 'Open Sans', helvetica, arial, verdana, sans-serif !default;
+
+
+.recipe {
+    display: flex;
+    position: relative;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
+    background-color: $grey;
+
+    @include mq($from: tablet) {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    @include mq($until: desktop) {
+        padding-bottom: 45px;
+    }
+
+    @include mq($until: tablet) {
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        background-color: $white;
+
+        @include mq($until: desktop) {
+            height: 45px;
+        }
+
+        @include mq($until: tablet) {
+            display: none;
+        }
+    }
+
+    &.open {
+        @include mq($until: desktop) {
+
+            .sidebar {
+                width: 75%
+            }
+        }
+
+        @include mq($until: tablet) {
+
+            .sidebar {
+                width: calc(100% - 20px);
+            }
+        }
+
+        .ingredients {
+            display: block;
+        }
+
+        .mobile-label img {
+            transform: rotate(45deg);
+        }
+    }
+
+    .sidebar {
+        width: calc(444 / 1306 * 100%);
+        height: 100%;
+        padding: 0 25px 0;
+        background-color: $white;
+        border-right: 1px solid black;
+        box-sizing: border-box;
+        z-index: 1;
+
+        @include mq($until: desktop) {
+            position: absolute;
+            top: 0;
+            left: -30px;
+            width: 60px;
+            // height: calc(100% - 45px);
+            padding: 0;
+            transition: .5s width ease;
+        }
+
+        @include mq($until: tablet) {
+            top: 100px;
+            left: 0;
+            width: 50px;
+        }
+
+        p {
+            margin: 0 0 10px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            @include mq($until: desktop) {
+                padding: 10px;
+            }
+        }
+
+        li {
+            width: 100%;
+            margin: 0 0 10px;
+            font-family: $sans;
+            font-size: 16px;
+            line-height: 26px;
+
+            &:last-of-type {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .inner {
+        @include mq($until: desktop) {
+            position: sticky;
+            top: 80px;
+            height: 100vh;
+        }
+    }
+
+    .mobile-label {
+        display: none;
+        position: relative;
+        z-index: 1;
+
+        @include mq($until: desktop) {
+            display: block;
+        }
+
+        @include mq($until: tablet) {
+            top: 10px;
+        }
+
+        img {
+            position: absolute;
+            right: 17px;
+            width: 15px;
+            transition: .3s transform ease;
+
+            @include mq($until: tablet) {
+                right: 17px;
+            }
+        }
+
+        span {
+            position: absolute;
+            top: 10px;
+            right: -60px;
+            font-family: $sans;
+            font-size: 12px;
+            line-height: 17px;
+            letter-spacing: 1.5px;
+            transform: rotate(90deg);
+            transform-origin: 0 100% 0;
+
+            // @include mq($until: tablet) {
+            //     right: -65px;
+            // }
+        }
+
+    }
+
+    .ingredients {
+        margin-bottom: 20px;
+
+        @include mq($until: desktop) {
+            display: none;
+            position: relative;
+            top: 50px;
+            left: -10px;
+            // width: 80%;
+            height: calc(100% - 60px);
+            margin: 0px 60px 0 30px;
+            overflow-x: hidden;
+            opacity: 0;
+            transition: opacity .3s ease, left .3s ease;
+        }
+
+        @include mq($until: tablet) {
+            margin: 0px 40px 0 20px;
+        }
+    }
+
+    .title {
+        width: auto;
+        margin: 0 0 20px;
+
+        @include mq($until: desktop) {
+            display: none;
+        }
+    }
+
+    .details {
+        display: flex;
+        position: absolute;
+        right: 0;
+
+        @include mq($until: tablet) {
+            position: relative;
+            margin-top: 30px;
+            justify-content: space-around;
+            background-color: $white;
+            padding: 0 20px 15px;
+        }
+
+        img {
+            display: inline-block;
+            position: relative;
+            margin-right: 7px;
+
+            @include mq($until: tablet) {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        span {
+            position: relative;
+            font-family: $sans;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 1px;
+
+            @include mq($until: 750px) {
+                font-size: 10px;
+            }
+
+            @include mq($until: tablet) {
+                display: block;
+                line-height: 17px;
+            }
+        }
+
+        .thin {
+            bottom: 0;
+            font-weight: normal;
+
+            @include mq($until: tablet) {
+                display: inline-block;
+            }
+        }
+
+        .serves,
+        .time,
+        .difficulty {
+            @include mq($until: tablet) {
+                text-align: center;
+            }
+        }
+
+
+        .serves,
+        .time {
+            margin-right: 40px;
+
+            @include mq($until: desktop) {
+                margin-right: 20px;
+            }
+
+            @include mq($until: tablet) {
+                margin-right: 14px;
+            }
+        }
+
+        .serves {
+
+            span {
+                bottom: 10px;
+            }
+        }
+
+        .time {
+            @include mq($until: tablet) {
+
+                span {
+                    margin-right: 0;
+                }
+            }
+
+            img {
+                top: 2px;
+            }
+
+            span:not(.thin) {
+                bottom: 7px;
+
+                &:first-of-type {
+                    margin-right: 15px;
+
+                    @include mq($until: tablet) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        .difficulty {
+
+            span {
+                bottom: 5px;
+            }
+        }
+    }
+
+    .method {
+        position: relative;
+        width: calc(862 / 1306 * 100%);
+        height: 100%;
+        margin: 80px auto 0;
+        padding: 0 30px;
+        box-sizing: border-box;
+
+        @include mq($until: desktop) {
+            width: 100%;
+            margin: 75px 20px 0 60px;
+            padding: 0;
+        }
+
+        @include mq($until: tablet) {
+            width: 75%;
+            margin: 25px 0 0 70px;
+            padding-bottom: 25px;
+        }
+
+        p,
+        li {
+            width: 100%;
+            font-size: 16px;
+            line-height: 26px;
+            font-family: $sans;
+            color: $black;
+
+            @include mq($until: tablet) {
+                font-size: 14px;
+            }
+
+        }
+
+        p {
+            margin-bottom: 10px;
+
+            @include mq($until: tablet) {
+                line-height: 24px;
+            }
+        }
+
+        ul,
+        ol {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: disc outside none;
+        }
+
+        li {
+            width: calc(100% - 20px);
+            margin-bottom: 5px;
+            margin-left: 20px;
+
+            @include mq($until: tablet) {
+                line-height: 22px;
+            }
+        }
+    }
+
+    // Simplebar
+
+    .simplebar-vertical {
+        display: none;
+
+        @include mq($until: desktop) {
+            display: block;
+        }
+    }
+
+    // .simplebar-track.simplebar-vertical:before {
+    //     position: absolute;
+    //     height: 95%;
+    //     width: 2px;
+    //     content: '';
+    //     top: 5px;
+    //     left: 3.5px;
+    //     background-color: rgba(0, 0, 0, .2);
+    //     opacity: .3s;
+    // }
+
+    .simplebar-track .simplebar-scrollbar.simplebar-visible:before {
+        opacity: 1;
+        border-radius: 0;
+    }
+
+}

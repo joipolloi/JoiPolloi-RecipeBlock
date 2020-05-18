@@ -1,0 +1,37 @@
+{
+    "name": "joipolloi-recipeblock",
+    "version": "1.0.0",
+    "description": "Recipe block using Advanced Custom Fields for the Gutenberg editor in Wordpress",
+    "scripts": {
+        "dev": "run-p dev:*",
+        "dev:scripts": "webpack --mode development",
+        "dev:sass": "npm run build:sass && npm run build:sass -- -w",
+        "build": "run-p build:*",
+        "build:scripts": "webpack --mode production",
+        "build:sass": "node-sass -r --output-style compressed scss/recipe.scss -o ./"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/joipolloi/JoiPolloi-RecipeBlock.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/joipolloi/JoiPolloi-RecipeBlock/issues"
+    },
+    "homepage": "https://github.com/joipolloi/JoiPolloi-RecipeBlock#readme",
+    "devDependencies": {
+        "node-sass": "^4.14.1"
+    },
+    "dependencies": {
+        "@babel/core": "^7.9.6",
+        "babel-loader": "^8.1.0",
+        "css-loader": "^3.5.3",
+        "npm-run-all": "^4.1.5",
+        "simplebar": "^5.2.0",
+        "style-loader": "^1.2.1",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.11"
+    }
+}

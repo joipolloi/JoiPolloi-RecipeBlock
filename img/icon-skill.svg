@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="24px" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Assets/Icons/Recipes/SkillLevel</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Assets/Icons/Recipes/SkillLevel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-7" transform="translate(0.000000, 1.000000)" fill-rule="nonzero" stroke="#202020" stroke-width="0.8">
+            <rect id="Rectangle" x="4.09375" y="18.9541762" width="11.955476" height="3.80401235"></rect>
+            <path d="M10.071488,0 C12.3425285,0 14.2476339,1.56675481 14.7648883,3.67834869 L14.9034612,3.67540899 C17.5720864,3.67540899 19.7354345,5.8387571 19.7354345,8.50738223 C19.7354345,10.8024644 18.1353321,12.7238227 15.9898426,13.216742 L15.9896557,19.0053711 L4.15332031,19.0053711 L4.15313337,13.216742 C2.00764384,12.7238227 0.407541515,10.8024644 0.407541515,8.50738223 C0.407541515,5.8387571 2.57088962,3.67540899 5.23951475,3.67540899 C5.28626244,3.67540899 5.33285508,3.67607284 5.37928375,3.67739164 C5.89534212,1.56675481 7.80044746,0 10.071488,0 Z" id="Combined-Shape"></path>
+            <path d="M10.071488,18.9541762 L10.071488,13.8873505" id="Path-4" stroke-linecap="round"></path>
+            <path d="M12.7313741,18.9541762 L12.7313741,13.8873505" id="Path-4-Copy-2" stroke-linecap="round"></path>
+            <path d="M7.41160189,18.9541762 L7.41160189,13.8873505" id="Path-4-Copy" stroke-linecap="round"></path>
+        </g>
+    </g>
+</svg>
