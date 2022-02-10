@@ -22,7 +22,7 @@
     },
     "homepage": "https://github.com/joipolloi/JoiPolloi-RecipeBlock#readme",
     "devDependencies": {
-        "node-sass": "^4.14.1"
+        "node-sass": "^7.0.0"
     },
     "dependencies": {
         "@babel/core": "^7.9.6",
